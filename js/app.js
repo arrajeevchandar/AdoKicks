@@ -1153,6 +1153,58 @@
     };
   }
 
+  function getCatalogDefaults(filtersMeta, includeGender) {
+    const query = params();
+    const selectedCategories = new Set();
+    const selectedSizes = new Set();
+    const selectedBrands = new Set();
+
+    const categoryQuery = query.get("category") || query.get("categories") || "";
+    categoryQuery
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean)
+      .forEach((category) => {
+        if (filtersMeta.categories.includes(category)) {
+          selectedCategories.add(category);
+        }
+      });
+
+    const sizeQuery = query.get("size") || query.get("sizes") || "";
+    sizeQuery
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean)
+      .forEach((size) => {
+        if (filtersMeta.sizes.includes(Number(size)) || filtersMeta.sizes.includes(size)) {
+          selectedSizes.add(String(size));
+        }
+      });
+
+    const brandQuery = query.get("brand") || query.get("brands") || "";
+    brandQuery
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean)
+      .forEach((brand) => {
+        if (filtersMeta.brands.includes(brand)) {
+          selectedBrands.add(brand);
+        }
+      });
+
+    const requestedMaxPrice = Number(query.get("maxPrice"));
+    const selectedMaxPrice = Number.isFinite(requestedMaxPrice) && requestedMaxPrice > 0 ? Math.min(requestedMaxPrice, filtersMeta.maxPrice) : filtersMeta.maxPrice;
+    const requestedGender = query.get("gender");
+
+    return {
+      maxPrice: selectedMaxPrice,
+      categories: selectedCategories,
+      sizes: selectedSizes,
+      brands: selectedBrands,
+      gender: includeGender && (requestedGender === "mens" || requestedGender === "womens") ? requestedGender : "all"
+    };
+  }
+
   function renderCatalogPage(products, includeGender = false) {
     const panel = document.getElementById("filter-panel");
     const grid = document.getElementById("product-grid");
@@ -1181,13 +1233,7 @@
     }
 
     const filtersMeta = buildCatalogFilters(products, includeGender);
-    const selected = {
-      maxPrice: filtersMeta.maxPrice,
-      categories: new Set(),
-      sizes: new Set(),
-      brands: new Set(),
-      gender: "all"
-    };
+    const selected = getCatalogDefaults(filtersMeta, includeGender);
 
     function renderMobileDropdownGroup(groupName, label, options, allLabel) {
       const allOption = { value: "all", label: allLabel };
@@ -1634,6 +1680,131 @@
     });
 
     renderFiltered();
+  }
+
+  function buildCategoryLandingCards() {
+    const categoryOrder = ["training", "running", "multisport", "casual", "sneakers"];
+    const genders = [
+      { value: "mens", label: "Men" },
+      { value: "womens", label: "Women" }
+    ];
+
+    return genders.flatMap((gender) =>
+      categoryOrder
+        .map((category) => {
+          const matches = state.products
+            .filter((item) => item.gender === gender.value && item.category === category)
+            .sort((a, b) => (b.rating || 0) * (b.reviews || 0) - (a.rating || 0) * (a.reviews || 0));
+
+          if (!matches.length) {
+            return null;
+          }
+
+          const heroProduct = matches[0];
+          const image = heroProduct.images && heroProduct.images.length ? heroProduct.images[0] : "adokicks.png";
+          const destination = `${gender.value}.html?gender=${encodeURIComponent(gender.value)}&category=${encodeURIComponent(category)}`;
+          const categoryLabel = CATEGORY_LABELS[category] || category;
+          const title = `${gender.label}'s ${categoryLabel}`;
+
+          return {
+            gender,
+            category,
+            title,
+            image,
+            destination,
+            brand: heroProduct.brand,
+            price: heroProduct.price,
+            count: matches.length
+          };
+        })
+        .filter(Boolean)
+    );
+  }
+
+  function renderCategoriesPage() {
+    const hero = document.getElementById("categories-hero");
+    const grid = document.getElementById("category-grid");
+    if (!hero || !grid) {
+      return;
+    }
+
+    const categoryCards = buildCategoryLandingCards();
+    const leadCards = [
+      {
+        gender: { value: "mens", label: "Men" },
+        title: "All Men's Shoes",
+        destination: "mens.html",
+        products: state.products.filter((item) => item.gender === "mens")
+      },
+      {
+        gender: { value: "womens", label: "Women" },
+        title: "All Women's Shoes",
+        destination: "womens.html",
+        products: state.products.filter((item) => item.gender === "womens")
+      }
+    ].map((card) => {
+      const heroProduct = card.products
+        .slice()
+        .sort((a, b) => (b.rating || 0) * (b.reviews || 0) - (a.rating || 0) * (a.reviews || 0))[0];
+
+      return {
+        ...card,
+        image: heroProduct && heroProduct.images && heroProduct.images.length ? heroProduct.images[0] : "adokicks.png",
+        brand: heroProduct ? heroProduct.brand : "Adokicks",
+        price: heroProduct ? heroProduct.price : 0,
+        count: card.products.length
+      };
+    });
+
+    const cards = [...leadCards, ...categoryCards];
+    const categoryCount = new Set(cards.map((card) => card.category)).size;
+    const genderCount = new Set(cards.map((card) => card.gender.value)).size;
+
+    hero.innerHTML = `
+      <div class="categories-hero-copy">
+        <p class="eyebrow">Category atlas</p>
+        <h1>Choose the edit that matches your pace.</h1>
+        <p class="page-subtitle">Each collection opens into the full mens or womens catalog with the category already selected, so you can refine the sidebar from there without losing the entry point.</p>
+      </div>
+      <div class="categories-hero-stats" aria-label="Category overview">
+        <article class="categories-hero-stat">
+          <span class="stat-label">Collections</span>
+          <strong>${cards.length}</strong>
+        </article>
+        <article class="categories-hero-stat">
+          <span class="stat-label">Styles</span>
+          <strong>${categoryCount}</strong>
+        </article>
+        <article class="categories-hero-stat">
+          <span class="stat-label">Genders</span>
+          <strong>${genderCount}</strong>
+        </article>
+      </div>
+    `;
+
+    grid.innerHTML = `
+      <div class="category-grid" role="list" aria-label="Category destinations">
+        ${cards
+          .map(
+            (card) => `
+              <a class="category-card ${card.gender.value === "mens" ? "category-card-men" : "category-card-women"}${card.isCollection ? " category-card-collection" : ""}" href="${sanitize(card.destination)}" role="listitem" aria-label="Open ${sanitize(card.title)}">
+                <img src="${sanitize(card.image)}" alt="${sanitize(card.title)} category background" class="category-card-image">
+                <div class="category-card-overlay"></div>
+                <div class="category-card-content">
+                  <p class="category-card-kicker">${sanitize(card.isCollection ? "Full assortment" : `${card.gender.label} collection`)}</p>
+                  <h2>${sanitize(card.title)}</h2>
+                  <p class="category-card-copy">${sanitize(card.isCollection ? `${card.count} shoes ready to browse from ${card.brand}.` : `${card.count} style${card.count === 1 ? "" : "s"} ready to browse from ${card.brand}.`)}</p>
+                  <div class="category-card-meta">
+                    <span class="category-card-pill">${sanitize(card.isCollection ? "All shoes" : CATEGORY_LABELS[card.category] || card.category)}</span>
+                    <span class="category-card-pill">From ${formatCurrency(card.price)}</span>
+                  </div>
+                </div>
+              </a>
+            `
+          )
+          .join("")}
+      </div>
+    `;
   }
 
   function renderFeatured() {
@@ -2352,7 +2523,7 @@
         renderCatalogPage(state.products.filter((item) => item.gender === "womens"));
         break;
       case "categories":
-        renderCatalogPage(state.products, true);
+        renderCategoriesPage();
         break;
       case "featured":
         renderFeatured();
