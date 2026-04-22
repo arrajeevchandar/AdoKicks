@@ -1,0 +1,1484 @@
+﻿{
+    "mens":  {
+                 "training":  [
+                                  {
+                                      "id":  "m-tr-001",
+                                      "brand":  "Nike",
+                                      "title":  "Nike Metcon 9",
+                                      "description":  "Built for the toughest training sessions, the Metcon 9 delivers a stable, flat heel for lifting and a flexible forefoot for dynamic movement. Features React foam cushioning and a wide, flat heel clip for stability during heavy lifts.",
+                                      "price":  4999,
+                                      "originalPrice":  6499,
+                                      "colors":  [
+                                                     "Black/White",
+                                                     "Grey/Red"
+                                                 ],
+                                      "sizes":  [
+                                                    6,
+                                                    7,
+                                                    7.5,
+                                                    8,
+                                                    8.5,
+                                                    9,
+                                                    9.5,
+                                                    10,
+                                                    10.5,
+                                                    11,
+                                                    12
+                                                ],
+                                      "gender":  "mens",
+                                      "category":  "training",
+                                      "rating":  4.5,
+                                      "reviews":  312,
+                                      "inStock":  true,
+                                      "images":  [
+                                                     "assests/mens/training/m-tr-001/img-01.jpeg",
+                                                     "assests/mens/training/m-tr-001/img-02.jpeg",
+                                                     "assests/mens/training/m-tr-001/img-03.jpeg",
+                                                     "assests/mens/training/m-tr-001/img-04.jpeg"
+                                                 ]
+                                  },
+                                  {
+                                      "id":  "m-tr-002",
+                                      "brand":  "Adidas",
+                                      "title":  "Adidas Powerlift 5",
+                                      "description":  "Engineered for powerlifting, the Powerlift 5 offers a raised heel for better squat depth, a wide toe box, and a stable base to support heavy loads. Canvas upper keeps it lightweight.",
+                                      "price":  5499,
+                                      "originalPrice":  6999,
+                                      "colors":  [
+                                                     "Core Black",
+                                                     "Cloud White"
+                                                 ],
+                                      "sizes":  [
+                                                    6,
+                                                    7,
+                                                    8,
+                                                    9,
+                                                    10,
+                                                    11,
+                                                    12
+                                                ],
+                                      "gender":  "mens",
+                                      "category":  "training",
+                                      "rating":  4.3,
+                                      "reviews":  198,
+                                      "inStock":  true,
+                                      "images":  [
+                                                     "assests/mens/training/m-tr-002/img-01.jpg",
+                                                     "assests/mens/training/m-tr-002/img-02.jpg",
+                                                     "assests/mens/training/m-tr-002/img-03.jpg",
+                                                     "assests/mens/training/m-tr-002/img-04.jpg"
+                                                 ]
+                                  },
+                                  {
+                                      "id":  "m-tr-003",
+                                      "brand":  "Reebok",
+                                      "title":  "Reebok Nano X3",
+                                      "description":  "The Nano X3 is the ultimate cross-training shoe with Floatride Energy Foam for cushioning and a FlexWeave upper that adapts to your foot\u0027s movement through every exercise.",
+                                      "price":  5999,
+                                      "originalPrice":  7499,
+                                      "colors":  [
+                                                     "Core Black/White",
+                                                     "Pure Grey"
+                                                 ],
+                                      "sizes":  [
+                                                    7,
+                                                    7.5,
+                                                    8,
+                                                    8.5,
+                                                    9,
+                                                    9.5,
+                                                    10,
+                                                    11
+                                                ],
+                                      "gender":  "mens",
+                                      "category":  "training",
+                                      "rating":  4.6,
+                                      "reviews":  425,
+                                      "inStock":  true,
+                                      "images":  [
+                                                     "assests/mens/training/m-tr-003/img-01.jpg",
+                                                     "assests/mens/training/m-tr-003/img-02.jpg",
+                                                     "assests/mens/training/m-tr-003/img-03.jpg",
+                                                     "assests/mens/training/m-tr-003/img-04.jpg"
+                                                 ]
+                                  },
+                                  {
+                                      "id":  "m-tr-004",
+                                      "brand":  "Under Armour",
+                                      "title":  "UA TriBase Reign 5",
+                                      "description":  "Zero drop from heel to toe means a more natural training position. The TriBase outsole maximises ground contact and grip, making it ideal for dynamic movements and heavy compound lifts.",
+                                      "price":  4799,
+                                      "originalPrice":  6299,
+                                      "colors":  [
+                                                     "Black/Pitch Grey",
+                                                     "White/Blue"
+                                                 ],
+                                      "sizes":  [
+                                                    7,
+                                                    8,
+                                                    9,
+                                                    10,
+                                                    11,
+                                                    12
+                                                ],
+                                      "gender":  "mens",
+                                      "category":  "training",
+                                      "rating":  4.2,
+                                      "reviews":  175,
+                                      "inStock":  true,
+                                      "images":  [
+                                                     "assests/mens/training/m-tr-004/img-01.jpg",
+                                                     "assests/mens/training/m-tr-004/img-02.jpg",
+                                                     "assests/mens/training/m-tr-004/img-03.jpg",
+                                                     "assests/mens/training/m-tr-004/img-04.jpg"
+                                                 ]
+                                  }
+                              ],
+                 "running":  [
+                                 {
+                                     "id":  "m-ru-001",
+                                     "brand":  "Nike",
+                                     "title":  "Nike Pegasus 41",
+                                     "description":  "The go-to daily trainer trusted by millions. React foam and a full-length Air unit deliver a smooth, energised ride across any distance. Updated engineered mesh upper keeps feet cool.",
+                                     "price":  7999,
+                                     "originalPrice":  9499,
+                                     "colors":  [
+                                                    "Black/Anthracite",
+                                                    "White/Pure Platinum",
+                                                    "Court Blue/Volt"
+                                                ],
+                                     "sizes":  [
+                                                   6,
+                                                   7,
+                                                   7.5,
+                                                   8,
+                                                   8.5,
+                                                   9,
+                                                   9.5,
+                                                   10,
+                                                   11,
+                                                   12
+                                               ],
+                                     "gender":  "mens",
+                                     "category":  "running",
+                                     "rating":  4.6,
+                                     "reviews":  1204,
+                                     "inStock":  true,
+                                     "images":  [
+                                                    "assests/mens/running/m-ru-001/img-01.jpg",
+                                                    "assests/mens/running/m-ru-001/img-02.jpg",
+                                                    "assests/mens/running/m-ru-001/img-03.jpg",
+                                                    "assests/mens/running/m-ru-001/img-04.jpg"
+                                                ]
+                                 },
+                                 {
+                                     "id":  "m-ru-002",
+                                     "brand":  "Adidas",
+                                     "title":  "Adidas Ultraboost 23",
+                                     "description":  "Premium Boost midsole returns energy with every step. An adaptive Primeknit+ upper wraps your foot like a second skin. Designed for long runs where comfort is non-negotiable.",
+                                     "price":  12999,
+                                     "originalPrice":  15999,
+                                     "colors":  [
+                                                    "Core Black/Carbon",
+                                                    "Cloud White/Blue Rush"
+                                                ],
+                                     "sizes":  [
+                                                   7,
+                                                   8,
+                                                   9,
+                                                   10,
+                                                   11,
+                                                   12
+                                               ],
+                                     "gender":  "mens",
+                                     "category":  "running",
+                                     "rating":  4.7,
+                                     "reviews":  876,
+                                     "inStock":  true,
+                                     "images":  [
+                                                    "assests/mens/running/m-ru-002/img-01.jpeg",
+                                                    "assests/mens/running/m-ru-002/img-02.jpeg",
+                                                    "assests/mens/running/m-ru-002/img-03.jpeg",
+                                                    "assests/mens/running/m-ru-002/img-04.jpeg"
+                                                ]
+                                 },
+                                 {
+                                     "id":  "m-ru-003",
+                                     "brand":  "ASICS",
+                                     "title":  "ASICS Gel-Kayano 30",
+                                     "description":  "A stability running shoe with GEL cushioning technology in the heel and forefoot. FF BLAST+ ECO midsole and a structured heel counter help control mild to moderate overpronation.",
+                                     "price":  10999,
+                                     "originalPrice":  13499,
+                                     "colors":  [
+                                                    "Black/White",
+                                                    "Deep Ocean/French Blue"
+                                                ],
+                                     "sizes":  [
+                                                   7,
+                                                   8,
+                                                   9,
+                                                   10,
+                                                   11
+                                               ],
+                                     "gender":  "mens",
+                                     "category":  "running",
+                                     "rating":  4.5,
+                                     "reviews":  643,
+                                     "inStock":  true,
+                                     "images":  [
+                                                    "assests/mens/running/m-ru-003/img-01.jpg",
+                                                    "assests/mens/running/m-ru-003/img-02.jpg",
+                                                    "assests/mens/running/m-ru-003/img-03.jpg",
+                                                    "assests/mens/running/m-ru-003/img-04.jpg"
+                                                ]
+                                 },
+                                 {
+                                     "id":  "m-ru-004",
+                                     "brand":  "New Balance",
+                                     "title":  "New Balance Fresh Foam X 1080v13",
+                                     "description":  "Maximum cushioning for long-distance comfort. Fresh Foam X midsole with a hyper-soft feel and a Hypoknit upper that stretches where you need it and supports where you don\u0027t.",
+                                     "price":  11499,
+                                     "originalPrice":  13999,
+                                     "colors":  [
+                                                    "Black/Magnet",
+                                                    "White/Cobalt Sky"
+                                                ],
+                                     "sizes":  [
+                                                   7,
+                                                   8,
+                                                   9,
+                                                   10,
+                                                   11,
+                                                   12
+                                               ],
+                                     "gender":  "mens",
+                                     "category":  "running",
+                                     "rating":  4.8,
+                                     "reviews":  521,
+                                     "inStock":  true,
+                                     "images":  [
+                                                    "assests/mens/running/m-ru-004/img-01.jpg",
+                                                    "assests/mens/running/m-ru-004/img-02.jpg",
+                                                    "assests/mens/running/m-ru-004/img-03.jpg",
+                                                    "assests/mens/running/m-ru-004/img-04.jpg"
+                                                ]
+                                 },
+                                 {
+                                     "id":  "m-ru-005",
+                                     "brand":  "Brooks",
+                                     "title":  "Brooks Ghost 16",
+                                     "description":  "Balanced cushioning and smooth transitions make the Ghost 16 a reliable everyday runner. DNA Loft v2 cushioning adapts to your stride whether you\u0027re a heel striker or midfoot runner.",
+                                     "price":  9499,
+                                     "originalPrice":  11999,
+                                     "colors":  [
+                                                    "Black/Ebony/Silver",
+                                                    "White/Oyster/Aqua"
+                                                ],
+                                     "sizes":  [
+                                                   7,
+                                                   8,
+                                                   9,
+                                                   10,
+                                                   11
+                                               ],
+                                     "gender":  "mens",
+                                     "category":  "running",
+                                     "rating":  4.4,
+                                     "reviews":  892,
+                                     "inStock":  true,
+                                     "images":  [
+                                                    "assests/mens/running/m-ru-005/img-01.jpg",
+                                                    "assests/mens/running/m-ru-005/img-02.jpg",
+                                                    "assests/mens/running/m-ru-005/img-03.jpg",
+                                                    "assests/mens/running/m-ru-005/img-04.jpg"
+                                                ]
+                                 }
+                             ],
+                 "multisport":  [
+                                    {
+                                        "id":  "m-ms-001",
+                                        "brand":  "Nike",
+                                        "title":  "Nike Wildhorse 8",
+                                        "description":  "Rugged trail shoe adapted for multisport athletes. React foam cushioning paired with aggressive lugs handles mud, gravel, and hard-pack terrain with equal ease.",
+                                        "price":  7499,
+                                        "originalPrice":  9499,
+                                        "colors":  [
+                                                       "Black/Anthracite",
+                                                       "Dark Teal/Volt"
+                                                   ],
+                                        "sizes":  [
+                                                      7,
+                                                      8,
+                                                      9,
+                                                      10,
+                                                      11
+                                                  ],
+                                        "gender":  "mens",
+                                        "category":  "multisport",
+                                        "rating":  4.3,
+                                        "reviews":  188,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/mens/multisport/m-ms-001/img-01.png",
+                                                       "assests/mens/multisport/m-ms-001/img-02.png",
+                                                       "assests/mens/multisport/m-ms-001/img-03.png",
+                                                       "assests/mens/multisport/m-ms-001/img-04.png"
+                                                   ]
+                                    },
+                                    {
+                                        "id":  "m-ms-002",
+                                        "brand":  "Salomon",
+                                        "title":  "Salomon Speedcross 6",
+                                        "description":  "Iconic crossover outsole with deep, chevron-shaped lugs for exceptional grip in mud and loose terrain. Lightweight yet protective for trail running and adventure racing.",
+                                        "price":  9999,
+                                        "originalPrice":  12499,
+                                        "colors":  [
+                                                       "Black/Black/Phantom",
+                                                       "Surf The Web/Black"
+                                                   ],
+                                        "sizes":  [
+                                                      7,
+                                                      8,
+                                                      9,
+                                                      10,
+                                                      11,
+                                                      12
+                                                  ],
+                                        "gender":  "mens",
+                                        "category":  "multisport",
+                                        "rating":  4.8,
+                                        "reviews":  765,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/mens/multisport/m-ms-002/img-01.jpg",
+                                                       "assests/mens/multisport/m-ms-002/img-02.jpg",
+                                                       "assests/mens/multisport/m-ms-002/img-03.jpg",
+                                                       "assests/mens/multisport/m-ms-002/img-04.jpg"
+                                                   ]
+                                    },
+                                    {
+                                        "id":  "m-ms-003",
+                                        "brand":  "Adidas",
+                                        "title":  "Adidas Terrex Speed Ultra",
+                                        "description":  "Race-ready trail shoe with Continental rubber outsole for wet and dry grip. Ultra-light at 220g and low-profile, built for technical terrain and obstacle course racing.",
+                                        "price":  8999,
+                                        "originalPrice":  11499,
+                                        "colors":  [
+                                                       "Core Black/Crystal White",
+                                                       "Pulse Lime/Black"
+                                                   ],
+                                        "sizes":  [
+                                                      7,
+                                                      8,
+                                                      9,
+                                                      10,
+                                                      11
+                                                  ],
+                                        "gender":  "mens",
+                                        "category":  "multisport",
+                                        "rating":  4.5,
+                                        "reviews":  312,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/mens/multisport/m-ms-003/img-01.jpeg",
+                                                       "assests/mens/multisport/m-ms-003/img-02.jpeg",
+                                                       "assests/mens/multisport/m-ms-003/img-03.jpeg"
+                                                   ]
+                                    },
+                                    {
+                                        "id":  "m-ms-004",
+                                        "brand":  "Inov-8",
+                                        "title":  "Inov-8 Mudclaw G 260",
+                                        "description":  "Graphene-grip outsole with 8mm spike-like lugs dominates the muddiest conditions. Ideal for OCR events, fell running, and cyclocross transitions.",
+                                        "price":  10499,
+                                        "originalPrice":  12999,
+                                        "colors":  [
+                                                       "Black/Yellow",
+                                                       "Navy/Teal"
+                                                   ],
+                                        "sizes":  [
+                                                      7,
+                                                      8,
+                                                      9,
+                                                      10,
+                                                      11
+                                                  ],
+                                        "gender":  "mens",
+                                        "category":  "multisport",
+                                        "rating":  4.7,
+                                        "reviews":  156,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/mens/multisport/m-ms-004/img-01.jpg",
+                                                       "assests/mens/multisport/m-ms-004/img-02.jpg",
+                                                       "assests/mens/multisport/m-ms-004/img-03.jpg",
+                                                       "assests/mens/multisport/m-ms-004/img-04.jpg"
+                                                   ]
+                                    },
+                                    {
+                                        "id":  "m-ms-005",
+                                        "brand":  "Hoka",
+                                        "title":  "Hoka Speedgoat 5",
+                                        "description":  "Maximum cushioning on the trail. VibramÂ® Megagrip outsole with 5mm lugs grips rocks and roots. Wide toe box allows natural splay during descents.",
+                                        "price":  12499,
+                                        "originalPrice":  14999,
+                                        "colors":  [
+                                                       "Black/Black",
+                                                       "Evening Primrose/Vibrant Orange"
+                                                   ],
+                                        "sizes":  [
+                                                      7,
+                                                      8,
+                                                      9,
+                                                      10,
+                                                      11,
+                                                      12
+                                                  ],
+                                        "gender":  "mens",
+                                        "category":  "multisport",
+                                        "rating":  4.6,
+                                        "reviews":  433,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/mens/multisport/m-ms-005/img-01.jpg",
+                                                       "assests/mens/multisport/m-ms-005/img-02.jpg"
+                                                   ]
+                                    }
+                                ],
+                 "casual":  [
+                                {
+                                    "id":  "m-ca-001",
+                                    "brand":  "Nike",
+                                    "title":  "Nike Air Force 1 \u002707",
+                                    "description":  "The legendary AF1 reimagined for today. Leather upper, foam midsole with visible Air unit, and a pivot circle on the rubber outsole. An icon that goes with everything.",
+                                    "price":  8999,
+                                    "originalPrice":  10999,
+                                    "colors":  [
+                                                   "White/White",
+                                                   "Black/Black",
+                                                   "Triple White"
+                                               ],
+                                    "sizes":  [
+                                                  6,
+                                                  7,
+                                                  8,
+                                                  9,
+                                                  10,
+                                                  11,
+                                                  12
+                                              ],
+                                    "gender":  "mens",
+                                    "category":  "casual",
+                                    "rating":  4.7,
+                                    "reviews":  3412,
+                                    "inStock":  true,
+                                    "images":  [
+                                                   "assests/mens/casual/m-ca-001/img-01.png",
+                                                   "assests/mens/casual/m-ca-001/img-02.png",
+                                                   "assests/mens/casual/m-ca-001/img-03.png",
+                                                   "assests/mens/casual/m-ca-001/img-04.png"
+                                               ]
+                                },
+                                {
+                                    "id":  "m-ca-002",
+                                    "brand":  "Adidas",
+                                    "title":  "Adidas Stan Smith",
+                                    "description":  "The original clean court shoe. Smooth leather upper, iconic perforated trefoil branding, and a timeless silhouette that defines minimalist style.",
+                                    "price":  6999,
+                                    "originalPrice":  8999,
+                                    "colors":  [
+                                                   "Cloud White/Green",
+                                                   "Cloud White/Navy",
+                                                   "Cloud White/Red"
+                                               ],
+                                    "sizes":  [
+                                                  6,
+                                                  7,
+                                                  8,
+                                                  9,
+                                                  10,
+                                                  11
+                                              ],
+                                    "gender":  "mens",
+                                    "category":  "casual",
+                                    "rating":  4.5,
+                                    "reviews":  2198,
+                                    "inStock":  true,
+                                    "images":  [
+                                                   "assests/mens/casual/m-ca-002/img-01.jpeg",
+                                                   "assests/mens/casual/m-ca-002/img-02.jpeg",
+                                                   "assests/mens/casual/m-ca-002/img-03.jpeg",
+                                                   "assests/mens/casual/m-ca-002/img-04.jpeg"
+                                               ]
+                                },
+                                {
+                                    "id":  "m-ca-003",
+                                    "brand":  "Vans",
+                                    "title":  "Vans Old Skool",
+                                    "description":  "The first shoe to feature Vans\u0027 iconic sidestripe. Canvas and suede upper, original waffle sole. The quintessential skate-turned-street shoe.",
+                                    "price":  4999,
+                                    "originalPrice":  5999,
+                                    "colors":  [
+                                                   "Black/White",
+                                                   "True White/True White",
+                                                   "Navy/White"
+                                               ],
+                                    "sizes":  [
+                                                  6,
+                                                  7,
+                                                  8,
+                                                  9,
+                                                  10,
+                                                  11
+                                              ],
+                                    "gender":  "mens",
+                                    "category":  "casual",
+                                    "rating":  4.6,
+                                    "reviews":  4211,
+                                    "inStock":  true,
+                                    "images":  [
+                                                   "assests/mens/casual/m-ca-003/img-01.jpeg",
+                                                   "assests/mens/casual/m-ca-003/img-02.jpeg",
+                                                   "assests/mens/casual/m-ca-003/img-03.jpeg"
+                                               ]
+                                },
+                                {
+                                    "id":  "m-ca-004",
+                                    "brand":  "Converse",
+                                    "title":  "Converse Chuck Taylor All Star Hi",
+                                    "description":  "Almost unchanged since 1917. Canvas upper, ankle patch, rubber toecap, and the iconic All Star ankle patch. A cultural staple worn by musicians, artists, and everyone else.",
+                                    "price":  4499,
+                                    "originalPrice":  5499,
+                                    "colors":  [
+                                                   "Optical White",
+                                                   "Black/Black",
+                                                   "Egret/Natural"
+                                               ],
+                                    "sizes":  [
+                                                  6,
+                                                  7,
+                                                  8,
+                                                  9,
+                                                  10,
+                                                  11
+                                              ],
+                                    "gender":  "mens",
+                                    "category":  "casual",
+                                    "rating":  4.4,
+                                    "reviews":  5123,
+                                    "inStock":  true,
+                                    "images":  [
+                                                   "assests/mens/casual/m-ca-004/img-01.jpeg",
+                                                   "assests/mens/casual/m-ca-004/img-02.jpeg",
+                                                   "assests/mens/casual/m-ca-004/img-03.jpeg",
+                                                   "assests/mens/casual/m-ca-004/img-04.jpeg"
+                                               ]
+                                },
+                                {
+                                    "id":  "m-ca-005",
+                                    "brand":  "Puma",
+                                    "title":  "PUMA Suede Classic XXI",
+                                    "description":  "Originally introduced in 1968 and still going strong. Suede leather upper with PUMA Formstrip branding and a vulcanised rubber sole. Timeless street style.",
+                                    "price":  5999,
+                                    "originalPrice":  7499,
+                                    "colors":  [
+                                                   "PUMA Black/PUMA Team Gold",
+                                                   "PUMA White/High Risk Red"
+                                               ],
+                                    "sizes":  [
+                                                  6,
+                                                  7,
+                                                  8,
+                                                  9,
+                                                  10,
+                                                  11
+                                              ],
+                                    "gender":  "mens",
+                                    "category":  "casual",
+                                    "rating":  4.3,
+                                    "reviews":  1876,
+                                    "inStock":  true,
+                                    "images":  [
+                                                   "assests/mens/casual/m-ca-005/img-01.jpeg",
+                                                   "assests/mens/casual/m-ca-005/img-02.jpeg",
+                                                   "assests/mens/casual/m-ca-005/img-03.jpeg",
+                                                   "assests/mens/casual/m-ca-005/img-04.jpeg"
+                                               ]
+                                }
+                            ],
+                 "sneakers":  [
+                                  {
+                                      "id":  "m-sn-001",
+                                      "brand":  "Nike",
+                                      "title":  "Nike Air Max 90",
+                                      "description":  "The Air Max 90 is comfort and style wrapped in classic running DNA. Visible Max Air unit in the heel, leather and synthetic upper, and that unmistakable waffle outsole.",
+                                      "price":  10999,
+                                      "originalPrice":  12999,
+                                      "colors":  [
+                                                     "White/White-Sail-Wht",
+                                                     "Black/Dark Grey",
+                                                     "Infrared"
+                                                 ],
+                                      "sizes":  [
+                                                    6,
+                                                    7,
+                                                    8,
+                                                    9,
+                                                    10,
+                                                    11,
+                                                    12
+                                                ],
+                                      "gender":  "mens",
+                                      "category":  "sneakers",
+                                      "rating":  4.6,
+                                      "reviews":  2987,
+                                      "inStock":  true,
+                                      "images":  [
+                                                     "assests/mens/sneakers/m-sn-001/img-01.jpeg",
+                                                     "assests/mens/sneakers/m-sn-001/img-02.jpeg",
+                                                     "assests/mens/sneakers/m-sn-001/img-03.jpeg",
+                                                     "assests/mens/sneakers/m-sn-001/img-04.jpeg"
+                                                 ]
+                                  },
+                                  {
+                                      "id":  "m-sn-002",
+                                      "brand":  "Jordan",
+                                      "title":  "Air Jordan 1 Retro High OG",
+                                      "description":  "The sneaker that started a revolution. Classic leather upper, encapsulated Air cushioning, and the iconic Wings logo. Every colourway tells a new story.",
+                                      "price":  15999,
+                                      "originalPrice":  18999,
+                                      "colors":  [
+                                                     "Black/White/Varsity Red",
+                                                     "White/University Blue/Black",
+                                                     "Sail/Dark Mocha"
+                                                 ],
+                                      "sizes":  [
+                                                    7,
+                                                    8,
+                                                    9,
+                                                    10,
+                                                    11,
+                                                    12
+                                                ],
+                                      "gender":  "mens",
+                                      "category":  "sneakers",
+                                      "rating":  4.9,
+                                      "reviews":  4543,
+                                      "inStock":  true,
+                                      "images":  [
+                                                     "assests/mens/sneakers/m-sn-002/img-01.jpg",
+                                                     "assests/mens/sneakers/m-sn-002/img-02.jpg",
+                                                     "assests/mens/sneakers/m-sn-002/img-03.jpg",
+                                                     "assests/mens/sneakers/m-sn-002/img-04.jpg"
+                                                 ]
+                                  },
+                                  {
+                                      "id":  "m-sn-003",
+                                      "brand":  "Adidas",
+                                      "title":  "Adidas Yeezy Boost 350 V2",
+                                      "description":  "Primeknit upper, Boost midsole technology, and that iconic side stripe. One of the most sought-after sneaker silhouettes of the generation, blending performance foam with hype-driven design.",
+                                      "price":  24999,
+                                      "originalPrice":  29999,
+                                      "colors":  [
+                                                     "Beluga Reflective",
+                                                     "Zebra",
+                                                     "Static"
+                                                 ],
+                                      "sizes":  [
+                                                    7,
+                                                    8,
+                                                    9,
+                                                    10,
+                                                    11
+                                                ],
+                                      "gender":  "mens",
+                                      "category":  "sneakers",
+                                      "rating":  4.8,
+                                      "reviews":  2134,
+                                      "inStock":  true,
+                                      "images":  [
+                                                     "assests/mens/sneakers/m-sn-003/img-01.jpg",
+                                                     "assests/mens/sneakers/m-sn-003/img-02.jpg",
+                                                     "assests/mens/sneakers/m-sn-003/img-03.jpg",
+                                                     "assests/mens/sneakers/m-sn-003/img-04.jpg"
+                                                 ]
+                                  },
+                                  {
+                                      "id":  "m-sn-004",
+                                      "brand":  "New Balance",
+                                      "title":  "New Balance 550",
+                                      "description":  "A retro basketball shoe making a serious comeback. Leather upper with heel panel, EVA foam sole, and an understated colour-blocked design. Effortlessly cool.",
+                                      "price":  7999,
+                                      "originalPrice":  9999,
+                                      "colors":  [
+                                                     "White/Green",
+                                                     "White/Burgundy",
+                                                     "Black/Team Red"
+                                                 ],
+                                      "sizes":  [
+                                                    7,
+                                                    8,
+                                                    9,
+                                                    10,
+                                                    11
+                                                ],
+                                      "gender":  "mens",
+                                      "category":  "sneakers",
+                                      "rating":  4.7,
+                                      "reviews":  1876,
+                                      "inStock":  true,
+                                      "images":  [
+                                                     "assests/mens/sneakers/m-sn-004/img-01.jpeg",
+                                                     "assests/mens/sneakers/m-sn-004/img-02.jpeg",
+                                                     "assests/mens/sneakers/m-sn-004/img-03.jpeg",
+                                                     "assests/mens/sneakers/m-sn-004/img-04.jpeg"
+                                                 ]
+                                  }
+                              ]
+             },
+    "womens":  {
+                   "training":  [
+                                    {
+                                        "id":  "w-tr-001",
+                                        "brand":  "Nike",
+                                        "title":  "Nike Metcon 9 Women\u0027s",
+                                        "description":  "The women\u0027s Metcon 9 is engineered for the toughest workouts. React foam cushioning paired with a wide flat heel clip for stability during lifting sessions and quick transitions.",
+                                        "price":  5299,
+                                        "originalPrice":  6799,
+                                        "colors":  [
+                                                       "Pink Oxford/Metallic Silver",
+                                                       "Black/White"
+                                                   ],
+                                        "sizes":  [
+                                                      4,
+                                                      5,
+                                                      6,
+                                                      7,
+                                                      8,
+                                                      9,
+                                                      10
+                                                  ],
+                                        "gender":  "womens",
+                                        "category":  "training",
+                                        "rating":  4.5,
+                                        "reviews":  287,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/womens/training/w-tr-001/img-01.jpeg",
+                                                       "assests/womens/training/w-tr-001/img-02.jpeg",
+                                                       "assests/womens/training/w-tr-001/img-03.jpeg",
+                                                       "assests/womens/training/w-tr-001/img-04.jpeg"
+                                                   ]
+                                    },
+                                    {
+                                        "id":  "w-tr-002",
+                                        "brand":  "Adidas",
+                                        "title":  "Adidas Dropset 2 Trainer Women\u0027s",
+                                        "description":  "Dual-density midsole with a wide base for stable lifting and flexible forefoot for agility work. A breathable mesh upper keeps you comfortable through the toughest circuit sessions.",
+                                        "price":  5499,
+                                        "originalPrice":  6999,
+                                        "colors":  [
+                                                       "Wonder Quartz/White",
+                                                       "Core Black/White"
+                                                   ],
+                                        "sizes":  [
+                                                      4,
+                                                      5,
+                                                      6,
+                                                      7,
+                                                      8,
+                                                      9
+                                                  ],
+                                        "gender":  "womens",
+                                        "category":  "training",
+                                        "rating":  4.4,
+                                        "reviews":  198,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/womens/training/w-tr-002/img-01.jpeg",
+                                                       "assests/womens/training/w-tr-002/img-02.jpeg",
+                                                       "assests/womens/training/w-tr-002/img-03.jpeg",
+                                                       "assests/womens/training/w-tr-002/img-04.jpeg"
+                                                   ]
+                                    },
+                                    {
+                                        "id":  "w-tr-003",
+                                        "brand":  "Reebok",
+                                        "title":  "Reebok Nano X3 Women\u0027s",
+                                        "description":  "Floatride Energy foam and FlexWeave upper built for women\u0027s biomechanics. Versatile enough for rope climbs, box jumps, and heavy deadlifts in the same session.",
+                                        "price":  5999,
+                                        "originalPrice":  7499,
+                                        "colors":  [
+                                                       "Frostberry/Rose Gold",
+                                                       "Black/White/Reebok Rubber Gum"
+                                                   ],
+                                        "sizes":  [
+                                                      4,
+                                                      5,
+                                                      6,
+                                                      7,
+                                                      8,
+                                                      9
+                                                  ],
+                                        "gender":  "womens",
+                                        "category":  "training",
+                                        "rating":  4.6,
+                                        "reviews":  376,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/womens/training/w-tr-003/img-01.jpeg",
+                                                       "assests/womens/training/w-tr-003/img-02.jpeg",
+                                                       "assests/womens/training/w-tr-003/img-03.jpeg",
+                                                       "assests/womens/training/w-tr-003/img-04.jpeg"
+                                                   ]
+                                    },
+                                    {
+                                        "id":  "w-tr-004",
+                                        "brand":  "Under Armour",
+                                        "title":  "UA HOVR Rise 4 Women\u0027s",
+                                        "description":  "HOVR foam provides near-zero gravity feel while helping maintain energy return. Ideal for HIIT and group fitness classes where you need cushioning and court-style grip.",
+                                        "price":  4999,
+                                        "originalPrice":  6499,
+                                        "colors":  [
+                                                       "Mineral Blue/White",
+                                                       "Black/Halo Gray"
+                                                   ],
+                                        "sizes":  [
+                                                      4,
+                                                      5,
+                                                      6,
+                                                      7,
+                                                      8,
+                                                      9
+                                                  ],
+                                        "gender":  "womens",
+                                        "category":  "training",
+                                        "rating":  4.3,
+                                        "reviews":  167,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/womens/training/w-tr-004/img-01.jpeg",
+                                                       "assests/womens/training/w-tr-004/img-02.jpeg",
+                                                       "assests/womens/training/w-tr-004/img-03.jpeg",
+                                                       "assests/womens/training/w-tr-004/img-04.jpeg"
+                                                   ]
+                                    },
+                                    {
+                                        "id":  "w-tr-005",
+                                        "brand":  "Puma",
+                                        "title":  "PUMA Fuse 2.0 Women\u0027s",
+                                        "description":  "Low-profile training shoe with a stable base and breathable knit upper. Multi-directional flex grooves allow natural movement through any exercise from squats to agility drills.",
+                                        "price":  3999,
+                                        "originalPrice":  5299,
+                                        "colors":  [
+                                                       "Lavender Fog/PUMA White",
+                                                       "Rose Quartz/Black"
+                                                   ],
+                                        "sizes":  [
+                                                      4,
+                                                      5,
+                                                      6,
+                                                      7,
+                                                      8,
+                                                      9
+                                                  ],
+                                        "gender":  "womens",
+                                        "category":  "training",
+                                        "rating":  4.1,
+                                        "reviews":  189,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/womens/training/w-tr-005/img-01.jpeg",
+                                                       "assests/womens/training/w-tr-005/img-02.jpeg",
+                                                       "assests/womens/training/w-tr-005/img-03.jpeg",
+                                                       "assests/womens/training/w-tr-005/img-04.jpeg"
+                                                   ]
+                                    }
+                                ],
+                   "running":  [
+                                   {
+                                       "id":  "w-ru-001",
+                                       "brand":  "Nike",
+                                       "title":  "Nike Pegasus 41 Women\u0027s",
+                                       "description":  "The trusted women\u0027s daily trainer with React foam and Air cushioning. Engineered mesh with wider toe box accommodates natural foot shape during long miles.",
+                                       "price":  7999,
+                                       "originalPrice":  9499,
+                                       "colors":  [
+                                                      "Metallic Red Bronze/White",
+                                                      "Black/Dark Grey",
+                                                      "Barely Grape/Soft Pink"
+                                                  ],
+                                       "sizes":  [
+                                                     4,
+                                                     5,
+                                                     6,
+                                                     7,
+                                                     8,
+                                                     9,
+                                                     10
+                                                 ],
+                                       "gender":  "womens",
+                                       "category":  "running",
+                                       "rating":  4.7,
+                                       "reviews":  1089,
+                                       "inStock":  true,
+                                       "images":  [
+                                                      "assests/womens/running/w-ru-001/img-01.jpeg",
+                                                      "assests/womens/running/w-ru-001/img-02.jpeg",
+                                                      "assests/womens/running/w-ru-001/img-03.jpeg",
+                                                      "assests/womens/running/w-ru-001/img-04.jpeg"
+                                                  ]
+                                   },
+                                   {
+                                       "id":  "w-ru-002",
+                                       "brand":  "ASICS",
+                                       "title":  "ASICS Gel-Nimbus 26 Women\u0027s",
+                                       "description":  "Maximum cushioning for long-distance runners. PureGEL technology in the rearfoot delivers ultra-softness on impact. FF BLAST+ midsole provides a high-energy return feel.",
+                                       "price":  13999,
+                                       "originalPrice":  16999,
+                                       "colors":  [
+                                                      "Black/White",
+                                                      "Pale Mint/Soft Sky",
+                                                      "Moonrock/Pure Silver"
+                                                  ],
+                                       "sizes":  [
+                                                     4,
+                                                     5,
+                                                     6,
+                                                     7,
+                                                     8,
+                                                     9
+                                                 ],
+                                       "gender":  "womens",
+                                       "category":  "running",
+                                       "rating":  4.8,
+                                       "reviews":  765,
+                                       "inStock":  true,
+                                       "images":  [
+                                                      "assests/womens/running/w-ru-002/img-01.jpeg",
+                                                      "assests/womens/running/w-ru-002/img-02.jpeg",
+                                                      "assests/womens/running/w-ru-002/img-03.jpeg",
+                                                      "assests/womens/running/w-ru-002/img-04.jpeg"
+                                                  ]
+                                   },
+                                   {
+                                       "id":  "w-ru-003",
+                                       "brand":  "Hoka",
+                                       "title":  "Hoka Bondi 8 Women\u0027s",
+                                       "description":  "Hoka\u0027s most cushioned road shoe. A full-compression EVA midsole and extended heel geometry reduce impact on every step. The softness is unmatched in road running.",
+                                       "price":  13499,
+                                       "originalPrice":  15999,
+                                       "colors":  [
+                                                      "Black/White",
+                                                      "Peach Parfait/Coral",
+                                                      "Blue Graphite/Aquarelle"
+                                                  ],
+                                       "sizes":  [
+                                                     4,
+                                                     5,
+                                                     6,
+                                                     7,
+                                                     8,
+                                                     9,
+                                                     10
+                                                 ],
+                                       "gender":  "womens",
+                                       "category":  "running",
+                                       "rating":  4.8,
+                                       "reviews":  1234,
+                                       "inStock":  true,
+                                       "images":  [
+                                                      "assests/womens/running/w-ru-003/img-01.jpeg",
+                                                      "assests/womens/running/w-ru-003/img-02.jpeg",
+                                                      "assests/womens/running/w-ru-003/img-03.jpeg",
+                                                      "assests/womens/running/w-ru-003/img-04.jpeg"
+                                                  ]
+                                   },
+                                   {
+                                       "id":  "w-ru-004",
+                                       "brand":  "New Balance",
+                                       "title":  "New Balance Fresh Foam X 880v14 Women\u0027s",
+                                       "description":  "A balanced daily trainer with a versatile Fresh Foam X midsole that works for both short recovery jogs and longer tempo efforts. Hypoknit upper offers targeted stretch zones.",
+                                       "price":  9499,
+                                       "originalPrice":  11999,
+                                       "colors":  [
+                                                      "Rose Dust/Vintage Rose",
+                                                      "Black/Magnet"
+                                                  ],
+                                       "sizes":  [
+                                                     4,
+                                                     5,
+                                                     6,
+                                                     7,
+                                                     8,
+                                                     9
+                                                 ],
+                                       "gender":  "womens",
+                                       "category":  "running",
+                                       "rating":  4.5,
+                                       "reviews":  543,
+                                       "inStock":  true,
+                                       "images":  [
+                                                      "assests/womens/running/w-ru-004/img-01.jpg",
+                                                      "assests/womens/running/w-ru-004/img-02.jpg",
+                                                      "assests/womens/running/w-ru-004/img-03.jpg",
+                                                      "assests/womens/running/w-ru-004/img-04.jpg"
+                                                  ]
+                                   },
+                                   {
+                                       "id":  "w-ru-005",
+                                       "brand":  "Brooks",
+                                       "title":  "Brooks Adrenaline GTS 23 Women\u0027s",
+                                       "description":  "The bestselling women\u0027s stability running shoe. Guide RailsÂ® hold your hips and knees aligned naturally. DNA LOFT v2 cushioning adapts to your stride for easy miles.",
+                                       "price":  9999,
+                                       "originalPrice":  12499,
+                                       "colors":  [
+                                                      "Peacoat/Blue/Copper",
+                                                      "White/Silver/White",
+                                                      "Pink/Black/Metallic"
+                                                  ],
+                                       "sizes":  [
+                                                     4,
+                                                     5,
+                                                     6,
+                                                     7,
+                                                     8,
+                                                     9,
+                                                     10
+                                                 ],
+                                       "gender":  "womens",
+                                       "category":  "running",
+                                       "rating":  4.7,
+                                       "reviews":  1876,
+                                       "inStock":  true,
+                                       "images":  [
+                                                      "assests/womens/running/w-ru-005/img-01.jpeg",
+                                                      "assests/womens/running/w-ru-005/img-02.jpeg",
+                                                      "assests/womens/running/w-ru-005/img-03.jpeg",
+                                                      "assests/womens/running/w-ru-005/img-04.jpeg"
+                                                  ]
+                                   }
+                               ],
+                   "multisport":  [
+                                      {
+                                          "id":  "w-ms-002",
+                                          "brand":  "Hoka",
+                                          "title":  "Hoka Speedgoat 5 Women\u0027s",
+                                          "description":  "Maximum trail cushioning for women. Vibram Megagrip with 5mm lugs provides tenacious grip on slick rocks and roots. Wide toe box allows natural foot splay on technical descents.",
+                                          "price":  12499,
+                                          "originalPrice":  14999,
+                                          "colors":  [
+                                                         "Black/White",
+                                                         "Pink Yarrow/Cyclamen",
+                                                         "Sea Ice/Lilac Marble"
+                                                     ],
+                                          "sizes":  [
+                                                        4,
+                                                        5,
+                                                        6,
+                                                        7,
+                                                        8,
+                                                        9
+                                                    ],
+                                          "gender":  "womens",
+                                          "category":  "multisport",
+                                          "rating":  4.7,
+                                          "reviews":  398,
+                                          "inStock":  true,
+                                          "images":  [
+                                                         "assests/womens/multisport/w-ms-002/img-01.jpg",
+                                                         "assests/womens/multisport/w-ms-002/img-02.jpg",
+                                                         "assests/womens/multisport/w-ms-002/img-03.jpg",
+                                                         "assests/womens/multisport/w-ms-002/img-04.jpg"
+                                                     ]
+                                      },
+                                      {
+                                          "id":  "w-ms-003",
+                                          "brand":  "Adidas",
+                                          "title":  "Adidas Terrex Trailrider Women\u0027s",
+                                          "description":  "Lightweight and agile trail running shoe with LightMotion EVA midsole and Continental rubber outsole. Made with recycled materials as part of Adidas\u0027 commitment to sustainability.",
+                                          "price":  7999,
+                                          "originalPrice":  9999,
+                                          "colors":  [
+                                                         "Wonder Mauve/Wonder Quartz/Wonder Orchid",
+                                                         "Black/Core Black/Carbon"
+                                                     ],
+                                          "sizes":  [
+                                                        4,
+                                                        5,
+                                                        6,
+                                                        7,
+                                                        8,
+                                                        9
+                                                    ],
+                                          "gender":  "womens",
+                                          "category":  "multisport",
+                                          "rating":  4.4,
+                                          "reviews":  178,
+                                          "inStock":  true,
+                                          "images":  [
+                                                         "assests/womens/multisport/w-ms-003/img-01.jpg",
+                                                         "assests/womens/multisport/w-ms-003/img-02.jpg",
+                                                         "assests/womens/multisport/w-ms-003/img-03.jpg",
+                                                         "assests/womens/multisport/w-ms-003/img-04.jpg"
+                                                     ]
+                                      },
+                                      {
+                                          "id":  "w-ms-004",
+                                          "brand":  "Brooks",
+                                          "title":  "Brooks Caldera 7 Women\u0027s",
+                                          "description":  "Maximum cushioning for long days on the trail. BioMoGo DNA midsole with TrailTack rubber outsole featuring 5mm multi-directional lugs for confident grip on all surfaces.",
+                                          "price":  9499,
+                                          "originalPrice":  11999,
+                                          "colors":  [
+                                                         "Black/Coral/Purple",
+                                                         "Blue/Mint/Yellow"
+                                                     ],
+                                          "sizes":  [
+                                                        4,
+                                                        5,
+                                                        6,
+                                                        7,
+                                                        8,
+                                                        9
+                                                    ],
+                                          "gender":  "womens",
+                                          "category":  "multisport",
+                                          "rating":  4.3,
+                                          "reviews":  143,
+                                          "inStock":  false,
+                                          "images":  [
+                                                         "assests/womens/multisport/w-ms-004/img-01.jpeg",
+                                                         "assests/womens/multisport/w-ms-004/img-02.jpeg",
+                                                         "assests/womens/multisport/w-ms-004/img-03.jpeg",
+                                                         "assests/womens/multisport/w-ms-004/img-04.jpeg"
+                                                     ]
+                                      },
+                                      {
+                                          "id":  "w-ms-005",
+                                          "brand":  "Merrell",
+                                          "title":  "Merrell Moab Speed 2 Women\u0027s",
+                                          "description":  "Versatile multisport shoe that crosses from trail to casual use. Float Pro foam midsole and a Merrell M-Select Grip outsole with 3.5mm lugs for multi-terrain confidence.",
+                                          "price":  8499,
+                                          "originalPrice":  10499,
+                                          "colors":  [
+                                                         "Powder/Lilac",
+                                                         "Granite",
+                                                         "Black"
+                                                     ],
+                                          "sizes":  [
+                                                        4,
+                                                        5,
+                                                        6,
+                                                        7,
+                                                        8,
+                                                        9
+                                                    ],
+                                          "gender":  "womens",
+                                          "category":  "multisport",
+                                          "rating":  4.4,
+                                          "reviews":  210,
+                                          "inStock":  true,
+                                          "images":  [
+                                                         "assests/womens/multisport/w-ms-005/img-01.jpg",
+                                                         "assests/womens/multisport/w-ms-005/img-02.jpg",
+                                                         "assests/womens/multisport/w-ms-005/img-03.jpg",
+                                                         "assests/womens/multisport/w-ms-005/img-04.jpg"
+                                                     ]
+                                      }
+                                  ],
+                   "casual":  [
+                                  {
+                                      "id":  "w-ca-001",
+                                      "brand":  "Nike",
+                                      "title":  "Nike Air Force 1 \u002707 Women\u0027s",
+                                      "description":  "The iconic AF1 in classic women\u0027s colourways. Leather upper, foam midsole with full-length Air unit, and a pivot circle outsole. As bold or as clean as you want it.",
+                                      "price":  8999,
+                                      "originalPrice":  10999,
+                                      "colors":  [
+                                                     "White/White",
+                                                     "Pale Ivory/Sanddrift/White",
+                                                     "Black/Black"
+                                                 ],
+                                      "sizes":  [
+                                                    4,
+                                                    5,
+                                                    6,
+                                                    7,
+                                                    8,
+                                                    9,
+                                                    10
+                                                ],
+                                      "gender":  "womens",
+                                      "category":  "casual",
+                                      "rating":  4.8,
+                                      "reviews":  3876,
+                                      "inStock":  true,
+                                      "images":  [
+                                                     "assests/womens/casual/w-ca-001/img-01.png",
+                                                     "assests/womens/casual/w-ca-001/img-02.png",
+                                                     "assests/womens/casual/w-ca-001/img-03.png",
+                                                     "assests/womens/casual/w-ca-001/img-04.png"
+                                                 ]
+                                  },
+                                  {
+                                      "id":  "w-ca-002",
+                                      "brand":  "Adidas",
+                                      "title":  "Adidas Samba OG Women\u0027s",
+                                      "description":  "The Samba is everywhere right now and for good reason. Supple leather upper, gum sole, and a low-profile silhouette that works with everything from tailored trousers to mini skirts.",
+                                      "price":  8999,
+                                      "originalPrice":  10999,
+                                      "colors":  [
+                                                     "Cloud White/Core Black/Clear Pink",
+                                                     "Core Black/Cloud White/Gum5"
+                                                 ],
+                                      "sizes":  [
+                                                    4,
+                                                    5,
+                                                    6,
+                                                    7,
+                                                    8,
+                                                    9
+                                                ],
+                                      "gender":  "womens",
+                                      "category":  "casual",
+                                      "rating":  4.9,
+                                      "reviews":  4123,
+                                      "inStock":  true,
+                                      "images":  [
+                                                     "assests/womens/casual/w-ca-002/img-01.jpeg",
+                                                     "assests/womens/casual/w-ca-002/img-02.jpeg",
+                                                     "assests/womens/casual/w-ca-002/img-03.jpeg",
+                                                     "assests/womens/casual/w-ca-002/img-04.jpeg"
+                                                 ]
+                                  },
+                                  {
+                                      "id":  "w-ca-003",
+                                      "brand":  "Vans",
+                                      "title":  "Vans Authentic Women\u0027s",
+                                      "description":  "The simplest, most versatile shoe Vans makes. Low-top canvas upper, original waffle outsole, and a clean silhouette that\u0027s defined effortless cool since 1966.",
+                                      "price":  3999,
+                                      "originalPrice":  4999,
+                                      "colors":  [
+                                                     "True White/True White",
+                                                     "Black/Black",
+                                                     "Blushing/True White"
+                                                 ],
+                                      "sizes":  [
+                                                    4,
+                                                    5,
+                                                    6,
+                                                    7,
+                                                    8,
+                                                    9
+                                                ],
+                                      "gender":  "womens",
+                                      "category":  "casual",
+                                      "rating":  4.6,
+                                      "reviews":  3219,
+                                      "inStock":  true,
+                                      "images":  [
+                                                     "assests/womens/casual/w-ca-003/img-01.jpeg",
+                                                     "assests/womens/casual/w-ca-003/img-02.jpeg",
+                                                     "assests/womens/casual/w-ca-003/img-03.jpeg",
+                                                     "assests/womens/casual/w-ca-003/img-04.jpeg"
+                                                 ]
+                                  },
+                                  {
+                                      "id":  "w-ca-004",
+                                      "brand":  "Converse",
+                                      "title":  "Converse Chuck 70 Hi Women\u0027s",
+                                      "description":  "An elevated take on the classic Chuck Taylor. Higher-grade canvas, more cushioning, and premium details make the Chuck 70 the grown-up version of an icon.",
+                                      "price":  5499,
+                                      "originalPrice":  6999,
+                                      "colors":  [
+                                                     "Vintage White/Black/Egret",
+                                                     "Black/Egret/Black",
+                                                     "Pale Putty/Amarillo/White"
+                                                 ],
+                                      "sizes":  [
+                                                    4,
+                                                    5,
+                                                    6,
+                                                    7,
+                                                    8,
+                                                    9
+                                                ],
+                                      "gender":  "womens",
+                                      "category":  "casual",
+                                      "rating":  4.5,
+                                      "reviews":  2987,
+                                      "inStock":  true,
+                                      "images":  [
+                                                     "assests/womens/casual/w-ca-004/img-01.jpeg",
+                                                     "assests/womens/casual/w-ca-004/img-02.jpeg",
+                                                     "assests/womens/casual/w-ca-004/img-03.jpeg",
+                                                     "assests/womens/casual/w-ca-004/img-04.jpeg"
+                                                 ]
+                                  },
+                                  {
+                                      "id":  "w-ca-005",
+                                      "brand":  "New Balance",
+                                      "title":  "New Balance 327 Women\u0027s",
+                                      "description":  "70s-inspired running heritage meets modern street styling. An oversized N logo, suede and mesh panelling, and a thick waffle sole make the 327 a statement casual shoe.",
+                                      "price":  6499,
+                                      "originalPrice":  7999,
+                                      "colors":  [
+                                                     "Sandstone/Copper",
+                                                     "Grey/Black",
+                                                     "Pink/Burgundy"
+                                                 ],
+                                      "sizes":  [
+                                                    4,
+                                                    5,
+                                                    6,
+                                                    7,
+                                                    8,
+                                                    9
+                                                ],
+                                      "gender":  "womens",
+                                      "category":  "casual",
+                                      "rating":  4.6,
+                                      "reviews":  2134,
+                                      "inStock":  true,
+                                      "images":  [
+                                                     "assests/womens/casual/w-ca-005/img-01.jpg",
+                                                     "assests/womens/casual/w-ca-005/img-02.jpg",
+                                                     "assests/womens/casual/w-ca-005/img-03.jpg",
+                                                     "assests/womens/casual/w-ca-005/img-04.jpg"
+                                                 ]
+                                  }
+                              ],
+                   "sneakers":  [
+                                    {
+                                        "id":  "w-sn-001",
+                                        "brand":  "Nike",
+                                        "title":  "Nike Air Max 97 Women\u0027s",
+                                        "description":  "Inspired by Japanese bullet trains, the Air Max 97 has full-length visible Air cushioning and a sleek, streamlined silhouette. A cultural icon that belongs in every rotation.",
+                                        "price":  12999,
+                                        "originalPrice":  15999,
+                                        "colors":  [
+                                                       "Metallic Gold/Varsity Red",
+                                                       "White/Summit White/Metallic Silver",
+                                                       "Black/Particle Grey"
+                                                   ],
+                                        "sizes":  [
+                                                      4,
+                                                      5,
+                                                      6,
+                                                      7,
+                                                      8,
+                                                      9,
+                                                      10
+                                                  ],
+                                        "gender":  "womens",
+                                        "category":  "sneakers",
+                                        "rating":  4.7,
+                                        "reviews":  2143,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/womens/sneakers/w-sn-001/img-01.png",
+                                                       "assests/womens/sneakers/w-sn-001/img-02.png",
+                                                       "assests/womens/sneakers/w-sn-001/img-03.png",
+                                                       "assests/womens/sneakers/w-sn-001/img-04.png"
+                                                   ]
+                                    },
+                                    {
+                                        "id":  "w-sn-002",
+                                        "brand":  "New Balance",
+                                        "title":  "New Balance 530 Women\u0027s",
+                                        "description":  "A 90s running archive gem now dominating street style. Suede and mesh panels, the REVlite midsole, and that distinctive 530 silhouette make it a go-to chunky sneaker.",
+                                        "price":  7499,
+                                        "originalPrice":  9499,
+                                        "colors":  [
+                                                       "White/Silver/Blue",
+                                                       "Beige/Brown/Cream",
+                                                       "Sea Salt/Sandstorm"
+                                                   ],
+                                        "sizes":  [
+                                                      4,
+                                                      5,
+                                                      6,
+                                                      7,
+                                                      8,
+                                                      9
+                                                  ],
+                                        "gender":  "womens",
+                                        "category":  "sneakers",
+                                        "rating":  4.7,
+                                        "reviews":  3421,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/womens/sneakers/w-sn-002/img-01.jpg",
+                                                       "assests/womens/sneakers/w-sn-002/img-02.jpg",
+                                                       "assests/womens/sneakers/w-sn-002/img-03.jpg",
+                                                       "assests/womens/sneakers/w-sn-002/img-04.jpg"
+                                                   ]
+                                    },
+                                    {
+                                        "id":  "w-sn-004",
+                                        "brand":  "ASICS",
+                                        "title":  "ASICS Gel-NYC Women\u0027s",
+                                        "description":  "Blending the Gel-MC Plus v3 and Gel-Nimbus 3 into one premium lifestyle shoe. GEL technology cushioning and premium suede panels make the Gel-NYC a favourite for sneaker collectors.",
+                                        "price":  9999,
+                                        "originalPrice":  12499,
+                                        "colors":  [
+                                                       "Cream/White",
+                                                       "Black/Dark Grey",
+                                                       "Mineral Beige/Wood Crepe"
+                                                   ],
+                                        "sizes":  [
+                                                      4,
+                                                      5,
+                                                      6,
+                                                      7,
+                                                      8,
+                                                      9
+                                                  ],
+                                        "gender":  "womens",
+                                        "category":  "sneakers",
+                                        "rating":  4.8,
+                                        "reviews":  2345,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/womens/sneakers/w-sn-004/img-01.jpg",
+                                                       "assests/womens/sneakers/w-sn-004/img-02.jpg",
+                                                       "assests/womens/sneakers/w-sn-004/img-03.jpg",
+                                                       "assests/womens/sneakers/w-sn-004/img-04.jpg"
+                                                   ]
+                                    },
+                                    {
+                                        "id":  "w-sn-005",
+                                        "brand":  "Nike",
+                                        "title":  "Nike Cortez Women\u0027s",
+                                        "description":  "Nike\u0027s very first shoe, redesigned for contemporary fashion. The Cortez is a cultural artifact â€” worn by athletes, artists, and icons â€” with a leather upper and the classic Swoosh.",
+                                        "price":  6999,
+                                        "originalPrice":  8499,
+                                        "colors":  [
+                                                       "White/Sail/Black/Bright Mandarin",
+                                                       "Black/White/Sail"
+                                                   ],
+                                        "sizes":  [
+                                                      4,
+                                                      5,
+                                                      6,
+                                                      7,
+                                                      8,
+                                                      9
+                                                  ],
+                                        "gender":  "womens",
+                                        "category":  "sneakers",
+                                        "rating":  4.6,
+                                        "reviews":  1543,
+                                        "inStock":  true,
+                                        "images":  [
+                                                       "assests/womens/sneakers/w-sn-005/img-01.png",
+                                                       "assests/womens/sneakers/w-sn-005/img-02.png",
+                                                       "assests/womens/sneakers/w-sn-005/img-03.png",
+                                                       "assests/womens/sneakers/w-sn-005/img-04.png"
+                                                   ]
+                                    }
+                                ]
+               }
+}
+

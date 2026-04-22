@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Checkout your Adokicks cart.">
+  <title>Adokicks | Checkout</title>
+  <link rel="icon" type="image/png" href="adokicks.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="checkout">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header id="app-header" role="banner" aria-label="Site header"></header>
+  <main id="main-content" role="main" aria-label="Checkout page">
+    <section class="page-hero checkout-hero" aria-label="Checkout introduction">
+      <p class="eyebrow">Secure checkout</p>
+      <h1>Checkout</h1>
+      <p class="page-subtitle">Review your order, confirm delivery details, and place it in one clean step.</p>
+    </section>
+    <section class="checkout-layout" aria-label="Checkout flow">
+      <section class="section-card checkout-panel" aria-label="Shipping address form">
+        <div class="checkout-section-head">
+          <h2>Delivery details</h2>
+          <p>We’ll use these details to ship your order and keep you updated.</p>
+        </div>
+        <form id="checkout-form" class="checkout-form" novalidate>
+          <label for="checkout-name">Name</label>
+          <input id="checkout-name" name="name" type="text" autocomplete="name" required aria-label="Full name">
+          <label for="checkout-email">Email</label>
+          <input id="checkout-email" name="email" type="email" autocomplete="email" required aria-label="Email address">
+          <label for="checkout-phone">Phone Number</label>
+          <input id="checkout-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required aria-label="Phone number">
+          <label for="checkout-address1">Address Line 1</label>
+          <input id="checkout-address1" name="address1" type="text" autocomplete="address-line1" required aria-label="Address line 1">
+          <label for="checkout-address2">Address Line 2</label>
+          <input id="checkout-address2" name="address2" type="text" autocomplete="address-line2" aria-label="Address line 2">
+          <label for="checkout-city">City</label>
+          <input id="checkout-city" name="city" type="text" autocomplete="address-level2" required aria-label="City">
+          <label for="checkout-state">State</label>
+          <input id="checkout-state" name="state" type="text" autocomplete="address-level1" required aria-label="State">
+          <label for="checkout-zipcode">Zipcode</label>
+          <input id="checkout-zipcode" name="zipcode" type="text" inputmode="numeric" autocomplete="postal-code" required aria-label="Zipcode">
+          <button type="submit" class="btn-primary" aria-label="Place your order">Place Order</button>
+        </form>
+      </section>
+      <aside id="order-summary" class="order-summary section-card" aria-label="Order summary"></aside>
+    </section>
+  </main>
+  <footer id="app-footer" role="contentinfo" aria-label="Site footer"></footer>
+</body>
+</html>

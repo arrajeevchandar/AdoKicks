@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in or sign up to Adokicks.">
+  <title>Adokicks | Sign In</title>
+  <link rel="icon" type="image/png" href="adokicks.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="auth">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header id="app-header" role="banner" aria-label="Site header"></header>
+  <main id="main-content" role="main" aria-label="Authentication page">
+    <section class="auth-shell" aria-label="Login and registration">
+      <aside class="auth-intro section-card" aria-label="Adokicks account benefits">
+        <p class="eyebrow">Member access</p>
+        <h1>Welcome to Adokicks</h1>
+        <p>Sign in to access your bag, wishlist, and order history, or create a new account in seconds.</p>
+        <ul class="auth-points" aria-label="Benefits of signing in">
+          <li>Faster checkout with saved profile details</li>
+          <li>Track orders and delivery updates</li>
+          <li>Save your favorite shoes in wishlist</li>
+        </ul>
+      </aside>
+
+      <section class="auth-section" aria-label="Authentication forms">
+        <div class="auth-toggle" role="tablist" aria-label="Choose authentication mode">
+          <button id="login-tab" class="toggle-btn active" role="tab" aria-selected="true" aria-controls="login-form" type="button">Login</button>
+          <button id="signup-tab" class="toggle-btn" role="tab" aria-selected="false" aria-controls="signup-form" type="button">Sign Up</button>
+        </div>
+
+        <form id="login-form" class="auth-form" novalidate aria-label="Login form">
+          <label for="login-phone">Phone Number</label>
+          <input id="login-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required aria-label="Login phone number">
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required aria-label="Login password">
+          <button type="submit" class="btn-primary" aria-label="Sign in">Sign In</button>
+        </form>
+
+        <form id="signup-form" class="auth-form hidden" novalidate aria-label="Signup form">
+          <div class="signup-grid" aria-label="Signup grouped fields">
+            <div class="auth-field">
+              <label for="signup-name">Full Name</label>
+              <input id="signup-name" name="name" type="text" autocomplete="name" required aria-label="Your full name">
+            </div>
+            <div class="auth-field">
+              <label for="signup-phone">Phone Number</label>
+              <input id="signup-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required aria-label="Signup phone number">
+            </div>
+            <div class="auth-field">
+              <label for="signup-password">Password</label>
+              <input id="signup-password" name="password" type="password" autocomplete="new-password" required aria-label="Create password">
+            </div>
+            <div class="auth-field">
+              <label for="signup-confirm-password">Confirm Password</label>
+              <input id="signup-confirm-password" name="confirmPassword" type="password" autocomplete="new-password" required aria-label="Confirm password">
+            </div>
+          </div>
+          <button type="submit" class="btn-primary" aria-label="Create account">Create Account</button>
+        </form>
+      </section>
+    </section>
+  </main>
+  <footer id="app-footer" role="contentinfo" aria-label="Site footer"></footer>
+</body>
+</html>

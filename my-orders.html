@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track your Adokicks orders.">
+  <title>Adokicks | My Orders</title>
+  <link rel="icon" type="image/png" href="adokicks.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="orders">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header id="app-header" role="banner" aria-label="Site header"></header>
+  <main id="main-content" role="main" aria-label="Order history">
+    <section class="page-hero orders-hero" aria-label="Orders introduction">
+      <p class="eyebrow">Order history</p>
+      <h1>My Orders</h1>
+      <p class="page-subtitle">Track previous purchases, revisit shipping details, and review each item in one place.</p>
+    </section>
+    <section class="orders-layout" aria-label="User orders">
+      <div class="section-card orders-panel">
+        <div class="checkout-section-head">
+          <h2>Recent orders</h2>
+          <p>View your complete order history below and open details when needed.</p>
+        </div>
+        <div id="orders-list" class="orders-list" aria-label="Orders list"></div>
+      </div>
+    </section>
+    <section id="order-summary-view" class="order-detail section-card" aria-label="Selected order detail"></section>
+  </main>
+  <footer id="app-footer" role="contentinfo" aria-label="Site footer"></footer>
+</body>
+</html>
