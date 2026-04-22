@@ -1192,11 +1192,14 @@
         }
       });
 
+    const requestedMinPrice = Number(query.get("minPrice"));
     const requestedMaxPrice = Number(query.get("maxPrice"));
+    const selectedMinPrice = Number.isFinite(requestedMinPrice) && requestedMinPrice >= 0 ? Math.min(requestedMinPrice, filtersMeta.maxPrice) : 0;
     const selectedMaxPrice = Number.isFinite(requestedMaxPrice) && requestedMaxPrice > 0 ? Math.min(requestedMaxPrice, filtersMeta.maxPrice) : filtersMeta.maxPrice;
     const requestedGender = query.get("gender");
 
     return {
+      minPrice: Math.min(selectedMinPrice, selectedMaxPrice),
       maxPrice: selectedMaxPrice,
       categories: selectedCategories,
       sizes: selectedSizes,
@@ -1234,6 +1237,31 @@
 
     const filtersMeta = buildCatalogFilters(products, includeGender);
     const selected = getCatalogDefaults(filtersMeta, includeGender);
+
+    function renderPriceRangeControls(suffix = "") {
+      const idSuffix = suffix ? `-${suffix}` : "";
+      return `
+        <div class="price-range-stack">
+          <div class="price-range-input-row">
+            <div class="price-range-control">
+              <label for="min-price${idSuffix}">Minimum amount</label>
+              <input id="min-price${idSuffix}" type="number" min="0" max="${filtersMeta.maxPrice}" step="100" value="${selected.minPrice}" aria-label="Minimum price amount">
+            </div>
+            <div class="price-range-control">
+              <label for="max-price${idSuffix}">Maximum amount</label>
+              <input id="max-price${idSuffix}" type="number" min="0" max="${filtersMeta.maxPrice}" step="100" value="${selected.maxPrice}" aria-label="Maximum price amount">
+            </div>
+          </div>
+          <div class="price-range-dual" data-price-range>
+            <div class="price-range-track" aria-hidden="true"></div>
+            <div class="price-range-progress" aria-hidden="true"></div>
+            <input id="min-price-slider${idSuffix}" class="price-range-slider price-range-slider-min" type="range" min="0" max="${filtersMeta.maxPrice}" step="100" value="${selected.minPrice}" aria-label="Minimum price slider">
+            <input id="max-price-slider${idSuffix}" class="price-range-slider price-range-slider-max" type="range" min="0" max="${filtersMeta.maxPrice}" step="100" value="${selected.maxPrice}" aria-label="Maximum price slider">
+          </div>
+          <div class="range-scale"><span>${formatCurrency(0)}</span><span>${formatCurrency(filtersMeta.maxPrice)}</span></div>
+        </div>
+      `;
+    }
 
     function renderMobileDropdownGroup(groupName, label, options, allLabel) {
       const allOption = { value: "all", label: allLabel };
@@ -1299,10 +1327,8 @@
         </div>
 
         <div class="filter-group filter-group-range">
-          <h3>Max Price</h3>
-          <p class="range-value" id="max-price-value">${formatCurrency(filtersMeta.maxPrice)}</p>
-          <input id="max-price" type="range" min="0" max="${filtersMeta.maxPrice}" step="100" value="${filtersMeta.maxPrice}" aria-label="Filter by maximum price">
-          <div class="range-scale"><span>${formatCurrency(0)}</span><span>${formatCurrency(filtersMeta.maxPrice)}</span></div>
+          <h3>Price Range</h3>
+          ${renderPriceRangeControls()}
         </div>
 
         ${
@@ -1356,11 +1382,9 @@
 
         <div class="filter-group filter-group-range">
           <div class="filter-select-head">
-            <h3>Max Price</h3>
+            <h3>Price Range</h3>
           </div>
-          <p class="range-value" id="max-price-value-mobile">${formatCurrency(filtersMeta.maxPrice)}</p>
-          <input id="max-price-mobile" type="range" min="0" max="${filtersMeta.maxPrice}" step="100" value="${filtersMeta.maxPrice}" aria-label="Filter by maximum price">
-          <div class="range-scale"><span>${formatCurrency(0)}</span><span>${formatCurrency(filtersMeta.maxPrice)}</span></div>
+          ${renderPriceRangeControls("mobile")}
         </div>
 
         ${mobileGenderGroup}
@@ -1432,18 +1456,42 @@
     );
 
     function syncFilterControls() {
-      const maxPriceInputs = [
-        document.getElementById("max-price"),
-        document.getElementById("max-price-mobile")
-      ].filter((element) => element instanceof HTMLInputElement);
-      maxPriceInputs.forEach((input) => {
-        input.value = String(selected.maxPrice);
+      const priceFieldIds = ["min-price", "max-price", "min-price-mobile", "max-price-mobile"];
+      priceFieldIds.forEach((id) => {
+        const input = document.getElementById(id);
+        if (input instanceof HTMLInputElement) {
+          if (id.includes("min-price")) {
+            input.value = String(selected.minPrice);
+            input.max = String(selected.maxPrice);
+          } else {
+            input.value = String(selected.maxPrice);
+            input.min = String(selected.minPrice);
+          }
+        }
       });
 
-      const maxPriceLabels = [document.getElementById("max-price-value"), document.getElementById("max-price-value-mobile")];
-      maxPriceLabels.forEach((label) => {
-        if (label) {
-          label.textContent = formatCurrency(selected.maxPrice);
+      const priceSliderIds = ["min-price-slider", "max-price-slider", "min-price-slider-mobile", "max-price-slider-mobile"];
+      priceSliderIds.forEach((id) => {
+        const input = document.getElementById(id);
+        if (input instanceof HTMLInputElement) {
+          if (id.includes("min-price-slider")) {
+            input.value = String(selected.minPrice);
+            input.max = String(selected.maxPrice);
+          } else {
+            input.value = String(selected.maxPrice);
+            input.min = String(selected.minPrice);
+          }
+        }
+      });
+
+      const rangeVisuals = panel.querySelectorAll("[data-price-range]");
+      const maxRangeValue = Math.max(filtersMeta.maxPrice, 1);
+      const start = (selected.minPrice / maxRangeValue) * 100;
+      const end = (selected.maxPrice / maxRangeValue) * 100;
+      rangeVisuals.forEach((rangeVisual) => {
+        if (rangeVisual instanceof HTMLElement) {
+          rangeVisual.style.setProperty("--range-start", `${start}%`);
+          rangeVisual.style.setProperty("--range-end", `${end}%`);
         }
       });
 
@@ -1518,7 +1566,7 @@
 
     function renderFiltered() {
       syncFilterControls();
-      let filtered = products.filter((item) => item.price <= selected.maxPrice);
+      let filtered = products.filter((item) => item.price >= selected.minPrice && item.price <= selected.maxPrice);
 
       if (selected.categories.size) {
         filtered = filtered.filter((item) => selected.categories.has(item.category));
@@ -1543,6 +1591,7 @@
 
     resetButtons.forEach((resetBtn) => {
       resetBtn.addEventListener("click", () => {
+        selected.minPrice = 0;
         selected.maxPrice = filtersMeta.maxPrice;
         selected.categories.clear();
         selected.sizes.clear();
@@ -1563,8 +1612,15 @@
       if (!(target instanceof HTMLInputElement)) {
         return;
       }
-      if (target.id === "max-price" || target.id === "max-price-mobile") {
-        selected.maxPrice = Number(target.value);
+      if (target.id === "min-price" || target.id === "min-price-mobile" || target.id === "min-price-slider" || target.id === "min-price-slider-mobile") {
+        const nextMin = Math.max(0, Math.min(Number(target.value), selected.maxPrice));
+        selected.minPrice = nextMin;
+        renderFiltered();
+        return;
+      }
+      if (target.id === "max-price" || target.id === "max-price-mobile" || target.id === "max-price-slider" || target.id === "max-price-slider-mobile") {
+        const nextMax = Math.min(filtersMeta.maxPrice, Math.max(Number(target.value), selected.minPrice));
+        selected.maxPrice = nextMax;
         renderFiltered();
       }
     });
