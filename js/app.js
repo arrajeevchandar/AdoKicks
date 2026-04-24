@@ -1804,34 +1804,7 @@
     }
 
     const categoryCards = buildCategoryLandingCards();
-    const leadCards = [
-      {
-        gender: { value: "mens", label: "Men" },
-        title: "All Men's Shoes",
-        destination: "mens.html",
-        products: state.products.filter((item) => item.gender === "mens")
-      },
-      {
-        gender: { value: "womens", label: "Women" },
-        title: "All Women's Shoes",
-        destination: "womens.html",
-        products: state.products.filter((item) => item.gender === "womens")
-      }
-    ].map((card) => {
-      const heroProduct = card.products
-        .slice()
-        .sort((a, b) => (b.rating || 0) * (b.reviews || 0) - (a.rating || 0) * (a.reviews || 0))[0];
-
-      return {
-        ...card,
-        image: heroProduct && heroProduct.images && heroProduct.images.length ? heroProduct.images[0] : "adokicks.png",
-        brand: heroProduct ? heroProduct.brand : "Adokicks",
-        price: heroProduct ? heroProduct.price : 0,
-        count: card.products.length
-      };
-    });
-
-    const cards = [...leadCards, ...categoryCards];
+    const cards = categoryCards;
     const categoryCount = new Set(cards.map((card) => card.category)).size;
     const genderCount = new Set(cards.map((card) => card.gender.value)).size;
 
@@ -1839,7 +1812,7 @@
       <div class="categories-hero-copy">
         <p class="eyebrow">Category atlas</p>
         <h1>Choose the edit that matches your pace.</h1>
-        <p class="page-subtitle">Each collection opens into the full mens or womens catalog with the category already selected, so you can refine the sidebar from there without losing the entry point.</p>
+        <p class="page-subtitle">Browse the core category collections directly, with each tile tuned to feel broad, balanced, and easy to scan.</p>
       </div>
       <div class="categories-hero-stats" aria-label="Category overview">
         <article class="categories-hero-stat">
@@ -1857,29 +1830,25 @@
       </div>
     `;
 
-    grid.innerHTML = `
-      <div class="category-grid" role="list" aria-label="Category destinations">
-        ${cards
-          .map(
-            (card) => `
-              <a class="category-card ${card.gender.value === "mens" ? "category-card-men" : "category-card-women"}${card.isCollection ? " category-card-collection" : ""}" href="${sanitize(card.destination)}" role="listitem" aria-label="Open ${sanitize(card.title)}">
-                <img src="${sanitize(card.image)}" alt="${sanitize(card.title)} category background" class="category-card-image">
-                <div class="category-card-overlay"></div>
-                <div class="category-card-content">
-                  <p class="category-card-kicker">${sanitize(card.isCollection ? "Full assortment" : `${card.gender.label} collection`)}</p>
-                  <h2>${sanitize(card.title)}</h2>
-                  <p class="category-card-copy">${sanitize(card.isCollection ? `${card.count} shoes ready to browse from ${card.brand}.` : `${card.count} style${card.count === 1 ? "" : "s"} ready to browse from ${card.brand}.`)}</p>
-                  <div class="category-card-meta">
-                    <span class="category-card-pill">${sanitize(card.isCollection ? "All shoes" : CATEGORY_LABELS[card.category] || card.category)}</span>
-                    <span class="category-card-pill">From ${formatCurrency(card.price)}</span>
-                  </div>
-                </div>
-              </a>
-            `
-          )
-          .join("")}
-      </div>
-    `;
+    grid.innerHTML = cards
+      .map(
+        (card) => `
+          <a class="category-card ${card.gender.value === "mens" ? "category-card-men" : "category-card-women"}${card.isCollection ? " category-card-collection" : ""}" href="${sanitize(card.destination)}" role="listitem" aria-label="Open ${sanitize(card.title)}">
+            <img src="${sanitize(card.image)}" alt="${sanitize(card.title)} category background" class="category-card-image">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <p class="category-card-kicker">${sanitize(card.isCollection ? "Full assortment" : `${card.gender.label} collection`)}</p>
+              <h2>${sanitize(card.title)}</h2>
+              <p class="category-card-copy">${sanitize(card.isCollection ? `${card.count} shoes ready to browse from ${card.brand}.` : `${card.count} style${card.count === 1 ? "" : "s"} ready to browse from ${card.brand}.`)}</p>
+              <div class="category-card-meta">
+                <span class="category-card-pill">${sanitize(card.isCollection ? "All shoes" : CATEGORY_LABELS[card.category] || card.category)}</span>
+                <span class="category-card-pill">From ${formatCurrency(card.price)}</span>
+              </div>
+            </div>
+          </a>
+        `
+      )
+      .join("");
   }
 
   function renderFeatured() {
