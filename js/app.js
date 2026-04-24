@@ -2133,14 +2133,20 @@
     const signupTab = document.getElementById("signup-tab");
     const loginForm = document.getElementById("login-form");
     const signupForm = document.getElementById("signup-form");
+    const authMessage = document.getElementById("auth-message");
 
-    if (!loginTab || !signupTab || !loginForm || !signupForm) {
+    if (!loginTab || !signupTab || !loginForm || !signupForm || !authMessage) {
       return;
+    }
+
+    function setAuthMessage(message) {
+      authMessage.textContent = message;
+      authMessage.classList.toggle("hidden", !message);
     }
 
     const notice = params().get("notice");
     if (notice === "please_login") {
-      toast("Please login to continue", "error");
+      setAuthMessage("Please login to continue.");
     }
 
     function showLogin() {
@@ -2150,6 +2156,7 @@
       signupTab.setAttribute("aria-selected", "false");
       loginForm.classList.remove("hidden");
       signupForm.classList.add("hidden");
+      setAuthMessage("");
     }
 
     function showSignup() {
@@ -2159,6 +2166,7 @@
       loginTab.setAttribute("aria-selected", "false");
       signupForm.classList.remove("hidden");
       loginForm.classList.add("hidden");
+      setAuthMessage("");
     }
 
     loginTab.addEventListener("click", showLogin);
@@ -2171,29 +2179,30 @@
       const password = String(form.get("password") || "");
 
       if (!validatePhone(phone)) {
-        toast("Enter a valid 10 digit phone number.");
+        setAuthMessage("Enter a valid 10 digit phone number.");
         return;
       }
       if (!password) {
-        toast("Password is required.");
+        setAuthMessage("Password is required.");
         return;
       }
 
       const users = getUsers();
       const user = users.find((entry) => entry.phone === phone);
       if (!user) {
-        toast("No account found for this phone number.");
+        setAuthMessage("No account found for this phone number.");
         return;
       }
 
       const hashed = await sha256(password);
       if (hashed !== user.passwordHash) {
-        toast("Incorrect password.");
+        setAuthMessage("Incorrect password.");
         return;
       }
 
       localStorage.setItem(STORAGE_KEYS.currentUser, user.phone);
       migrateLegacyAccountData(user.phone);
+      setAuthMessage("");
       toast("Login successful", "success");
       const redirect = params().get("redirect") || "index.html";
       window.location.href = redirect;
@@ -2208,25 +2217,25 @@
       const confirm = String(form.get("confirmPassword") || "");
 
       if (!validateName(name)) {
-        toast("Enter a valid name (letters and spaces, 2-50 chars).");
+        setAuthMessage("Enter a valid name (letters and spaces, 2-50 chars).");
         return;
       }
       if (!validatePhone(phone)) {
-        toast("Enter a valid 10 digit phone number.");
+        setAuthMessage("Enter a valid 10 digit phone number.");
         return;
       }
       if (!validatePassword(password)) {
-        toast("Password must be at least 8 chars with uppercase, lowercase, and number.");
+        setAuthMessage("Password must be at least 8 characters with uppercase, lowercase, and number.");
         return;
       }
       if (password !== confirm) {
-        toast("Password and confirm password must match.");
+        setAuthMessage("Password and confirm password must match.");
         return;
       }
 
       const users = getUsers();
       if (users.some((entry) => entry.phone === phone)) {
-        toast("This phone number is already registered.");
+        setAuthMessage("This phone number is already registered.");
         return;
       }
 
@@ -2235,6 +2244,7 @@
       storageSet(STORAGE_KEYS.users, users);
       localStorage.setItem(STORAGE_KEYS.currentUser, phone);
       migrateLegacyAccountData(phone);
+      setAuthMessage("");
       toast("Account created successfully", "success");
 
       const redirect = params().get("redirect") || "index.html";
