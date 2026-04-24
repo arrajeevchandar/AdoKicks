@@ -60,7 +60,24 @@
   }
 
   function getScopedStorageKey(baseKey, phone = getCurrentUserPhone()) {
-    return phone ? `${baseKey}_${phone}` : "";
+    return phone ? `${baseKey}_${phone}` : baseKey;
+  }
+
+  function mergeCartEntries(existingEntries, guestEntries) {
+    const merged = existingEntries.map((entry) => ({ ...entry }));
+    guestEntries.forEach((guestEntry) => {
+      const target = merged.find((entry) => entry.productId === guestEntry.productId && String(entry.size) === String(guestEntry.size));
+      if (target) {
+        target.qty += guestEntry.qty;
+      } else {
+        merged.push({ ...guestEntry });
+      }
+    });
+    return merged;
+  }
+
+  function mergeWishlistEntries(existingEntries, guestEntries) {
+    return Array.from(new Set([...existingEntries, ...guestEntries]));
   }
 
   function migrateLegacyAccountData(phone) {
@@ -70,21 +87,19 @@
 
     const scopedCartKey = getScopedStorageKey(STORAGE_KEYS.cart, phone);
     const scopedWishlistKey = getScopedStorageKey(STORAGE_KEYS.wishlist, phone);
+    const guestCart = storageGet(STORAGE_KEYS.cart, []);
+    const guestWishlist = storageGet(STORAGE_KEYS.wishlist, []);
+    const scopedCart = storageGet(scopedCartKey, []);
+    const scopedWishlist = storageGet(scopedWishlistKey, []);
 
-    if (scopedCartKey && localStorage.getItem(scopedCartKey) === null) {
-      const legacyCart = localStorage.getItem(STORAGE_KEYS.cart);
-      if (legacyCart !== null) {
-        localStorage.setItem(scopedCartKey, legacyCart);
-        localStorage.removeItem(STORAGE_KEYS.cart);
-      }
+    if (guestCart.length || scopedCart.length || localStorage.getItem(STORAGE_KEYS.cart) !== null) {
+      storageSet(scopedCartKey, mergeCartEntries(scopedCart, guestCart));
+      localStorage.removeItem(STORAGE_KEYS.cart);
     }
 
-    if (scopedWishlistKey && localStorage.getItem(scopedWishlistKey) === null) {
-      const legacyWishlist = localStorage.getItem(STORAGE_KEYS.wishlist);
-      if (legacyWishlist !== null) {
-        localStorage.setItem(scopedWishlistKey, legacyWishlist);
-        localStorage.removeItem(STORAGE_KEYS.wishlist);
-      }
+    if (guestWishlist.length || scopedWishlist.length || localStorage.getItem(STORAGE_KEYS.wishlist) !== null) {
+      storageSet(scopedWishlistKey, mergeWishlistEntries(scopedWishlist, guestWishlist));
+      localStorage.removeItem(STORAGE_KEYS.wishlist);
     }
   }
 
@@ -235,12 +250,6 @@
   }
 
   function toggleWishlist(productId) {
-    const user = getCurrentUser();
-    if (!user) {
-      toast("Please login to save items to your wishlist.");
-      window.location.href = "auth.html?redirect=" + encodeURIComponent(window.location.pathname.split("/").pop() + window.location.search);
-      return;
-    }
     const current = getWishlist();
     if (current.includes(productId)) {
       setWishlist(current.filter((id) => id !== productId));
@@ -252,12 +261,6 @@
   }
 
   function addToCart(productId, size, qty = 1) {
-    const user = getCurrentUser();
-    if (!user) {
-      toast("Please login to add items to your bag.");
-      window.location.href = "auth.html?redirect=" + encodeURIComponent(window.location.pathname.split("/").pop() + window.location.search);
-      return;
-    }
     if (!size) {
       toast("Please select a size before adding to bag.");
       return;
@@ -414,8 +417,14 @@
       <div class="site-header">
         <nav class="nav-inner" role="navigation" aria-label="Main navigation">
           <div class="nav-brand">
-            <a class="logo-link" href="index.html" aria-label="Go to home page">
-              <img src="adokicks.png" alt="Adokicks logo">
+            <a class="brand-link" href="index.html" aria-label="Go to home page">
+              <span class="logo-link" aria-hidden="true">
+                <img src="adokicks.png" alt="">
+              </span>
+              <span class="brand-copy">
+                <span class="brand-name">Adokicks</span>
+                <span class="brand-tagline">Premium sneaker studio</span>
+              </span>
             </a>
           </div>
           <div class="nav-desktop">
@@ -553,8 +562,28 @@
           <section aria-label="Social links">
             <h3>Follow Us</h3>
             <ul>
-              <li><a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Visit Adokicks Instagram">Instagram</a></li>
-              <li><a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Visit Adokicks Facebook">Facebook</a></li>
+              <li>
+                <a class="social-link" href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Visit Adokicks Instagram">
+                  <span class="social-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                      <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"></rect>
+                      <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                      <circle cx="17.1" cy="6.9" r="1.2" fill="currentColor"></circle>
+                    </svg>
+                  </span>
+                  <span class="social-label">Instagram</span>
+                </a>
+              </li>
+              <li>
+                <a class="social-link" href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Visit Adokicks Facebook">
+                  <span class="social-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                      <path d="M14 8.5h2.2V6H14c-2.1 0-3.8 1.7-3.8 3.8V12H8v2.5h2.2V20h2.6v-5.5H15l.4-2.5h-2.6V10c0-.8.4-1.5 1.2-1.5Z" fill="currentColor"></path>
+                    </svg>
+                  </span>
+                  <span class="social-label">Facebook</span>
+                </a>
+              </li>
             </ul>
           </section>
           <section aria-label="Contact details">
@@ -2195,7 +2224,7 @@
       }
 
       localStorage.setItem(STORAGE_KEYS.currentUser, user.phone);
-  migrateLegacyAccountData(user.phone);
+      migrateLegacyAccountData(user.phone);
       toast("Login successful", "success");
       const redirect = params().get("redirect") || "index.html";
       window.location.href = redirect;
