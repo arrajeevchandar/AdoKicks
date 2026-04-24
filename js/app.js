@@ -1122,20 +1122,10 @@
             <span>Sharp Urban Precision</span>
           </div>
         </div>
-        <a class="btn-secondary" href="about.html" aria-label="Read more about Adokicks">Read About Us</a>
+        
       </article>
     `;
 
-    benefits.innerHTML = `
-      <div class="section-card" style="background: #ffffff; border: 2px solid #dc2626;">
-        <div class="benefits">
-          <article class="benefit" aria-label="Free delivery info"><h3>Free Delivery <img src="assests/icons/free-delivery-free-svgrepo-com.svg" alt="Free Delivery" class="benefit-icon"></h3><p>On all prepaid orders.</p></article>
-          <article class="benefit" aria-label="Customer care info"><h3>Customer Care <img src="assests/icons/headphone-svgrepo-com.svg" alt="Customer Care" class="benefit-icon"></h3><p>Fast support and easy help.</p></article>
-          <article class="benefit" aria-label="Secure payments info"><h3>Secure Payments <img src="assests/icons/credit-card-svgrepo-com.svg" alt="Secure Payments" class="benefit-icon"></h3><p>Trusted checkout protection.</p></article>
-          <article class="benefit" aria-label="Cash on delivery info"><h3>Cash on Delivery <img src="assests/icons/cash-svgrepo-com.svg" alt="Cash on Delivery" class="benefit-icon"></h3><p>COD available for selected pincodes.</p></article>
-        </div>
-      </div>
-    `;
   }
 
   function buildCatalogFilters(products, includeGender) {
@@ -2304,8 +2294,8 @@
         <div class="checkout-summary-card">
           <div class="checkout-summary-head">
             <p class="eyebrow">Order review</p>
-            <h2>Summary</h2>
-            <p class="page-subtitle">${cart.length} item${cart.length === 1 ? "" : "s"} ready to ship.</p>
+           
+            <p class=" eyebrow">${cart.length} item${cart.length === 1 ? "" : "s"} ready to ship.</p>
           </div>
           <div class="checkout-items-list">
             ${cart
