@@ -1216,6 +1216,8 @@
     const selectedMinPrice = Number.isFinite(requestedMinPrice) && requestedMinPrice >= 0 ? Math.min(requestedMinPrice, filtersMeta.maxPrice) : 0;
     const selectedMaxPrice = Number.isFinite(requestedMaxPrice) && requestedMaxPrice > 0 ? Math.min(requestedMaxPrice, filtersMeta.maxPrice) : filtersMeta.maxPrice;
     const requestedGender = query.get("gender");
+    const requestedSort = (query.get("sort") || "").toLowerCase();
+    const selectedSort = requestedSort === "high-low" || requestedSort === "low-high" ? requestedSort : "default";
 
     return {
       minPrice: Math.min(selectedMinPrice, selectedMaxPrice),
@@ -1223,7 +1225,8 @@
       categories: selectedCategories,
       sizes: selectedSizes,
       brands: selectedBrands,
-      gender: includeGender && (requestedGender === "mens" || requestedGender === "womens") ? requestedGender : "all"
+      gender: includeGender && (requestedGender === "mens" || requestedGender === "womens") ? requestedGender : "all",
+      sort: selectedSort
     };
   }
 
@@ -1249,9 +1252,43 @@
       toggleBtn.setAttribute("aria-expanded", "false");
       toggleBtn.innerHTML = `<img src="assests/icons/filter-svgrepo-com.svg" alt="" aria-hidden="true">`;
 
+      const titleControls = document.createElement("div");
+      titleControls.className = "catalog-title-controls";
+
+      const sortWrap = document.createElement("div");
+      sortWrap.className = "catalog-sort-wrap";
+
+      const sortBtn = document.createElement("button");
+      sortBtn.id = "catalog-sort-toggle";
+      sortBtn.type = "button";
+      sortBtn.className = "catalog-sort-toggle";
+      sortBtn.setAttribute("aria-label", "Sort by price");
+      sortBtn.setAttribute("aria-expanded", "false");
+      sortBtn.setAttribute("aria-controls", "catalog-sort-menu");
+      sortBtn.innerHTML = `
+        <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+          <path d="M4 7h10v2H4V7Zm0 5h7v2H4v-2Zm0 5h4v2H4v-2Zm13-9 3 3h-2v7h-2v-7h-2l3-3Z" fill="currentColor"></path>
+        </svg>
+      `;
+
+      const sortMenu = document.createElement("div");
+      sortMenu.id = "catalog-sort-menu";
+      sortMenu.className = "catalog-sort-menu hidden";
+      sortMenu.setAttribute("role", "menu");
+      sortMenu.setAttribute("aria-label", "Sort products by price");
+      sortMenu.innerHTML = `
+        <button type="button" class="catalog-sort-option" data-sort-option="low-high" role="menuitemradio" aria-checked="false">Low to High</button>
+        <button type="button" class="catalog-sort-option" data-sort-option="high-low" role="menuitemradio" aria-checked="false">High to Low</button>
+      `;
+
+      sortWrap.appendChild(sortBtn);
+      sortWrap.appendChild(sortMenu);
+      titleControls.appendChild(sortWrap);
+      titleControls.appendChild(toggleBtn);
+
       heading.parentNode.insertBefore(row, heading);
       row.appendChild(heading);
-      row.appendChild(toggleBtn);
+      row.appendChild(titleControls);
     }
 
     const filtersMeta = buildCatalogFilters(products, includeGender);
@@ -1414,6 +1451,8 @@
     `;
 
     const filterToggleBtn = document.getElementById("catalog-filter-toggle");
+    const sortToggleBtn = document.getElementById("catalog-sort-toggle");
+    const sortMenu = document.getElementById("catalog-sort-menu");
     let filterBackdrop = document.getElementById("catalog-filter-backdrop");
     if (!filterBackdrop) {
       filterBackdrop = document.createElement("div");
@@ -1444,6 +1483,41 @@
       filterToggleBtn.onclick = () => {
         setFilterPanelVisibility();
       };
+    }
+
+    if (sortToggleBtn instanceof HTMLButtonElement && sortMenu instanceof HTMLElement) {
+      sortToggleBtn.addEventListener("click", () => {
+        const shouldOpen = sortMenu.classList.contains("hidden");
+        sortMenu.classList.toggle("hidden", !shouldOpen);
+        sortToggleBtn.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+      });
+
+      sortMenu.addEventListener("click", (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLButtonElement)) {
+          return;
+        }
+        const value = target.dataset.sortOption;
+        if (!value) {
+          return;
+        }
+        selected.sort = value;
+        renderFiltered();
+        sortMenu.classList.add("hidden");
+        sortToggleBtn.setAttribute("aria-expanded", "false");
+      });
+
+      document.addEventListener("click", (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) {
+          return;
+        }
+        if (target.closest(".catalog-sort-wrap")) {
+          return;
+        }
+        sortMenu.classList.add("hidden");
+        sortToggleBtn.setAttribute("aria-expanded", "false");
+      });
     }
 
     const closeFiltersMobileBtn = document.getElementById("close-filters-mobile");
@@ -1581,6 +1655,18 @@
           valueLabel.textContent = activeOption.dataset.label || activeOption.textContent || "All";
         }
       });
+
+      if (sortMenu instanceof HTMLElement) {
+        const sortOptions = sortMenu.querySelectorAll("[data-sort-option]");
+        sortOptions.forEach((option) => {
+          if (!(option instanceof HTMLButtonElement)) {
+            return;
+          }
+          const isActive = option.dataset.sortOption === selected.sort;
+          option.classList.toggle("is-active", isActive);
+          option.setAttribute("aria-checked", isActive ? "true" : "false");
+        });
+      }
     }
 
     function renderFiltered() {
@@ -1600,6 +1686,13 @@
         filtered = filtered.filter((item) => item.gender === selected.gender);
       }
 
+      if (selected.sort === "low-high") {
+        filtered = [...filtered].sort((a, b) => a.price - b.price);
+      }
+      if (selected.sort === "high-low") {
+        filtered = [...filtered].sort((a, b) => b.price - a.price);
+      }
+
       grid.innerHTML = filtered.length
         ? filtered.map((product) => productCard(product)).join("")
         : "<p>No products match your filters.</p>";
@@ -1616,6 +1709,7 @@
         selected.sizes.clear();
         selected.brands.clear();
         selected.gender = "all";
+        selected.sort = "default";
 
         filterForms.forEach((form) => {
           if (form instanceof HTMLFormElement) {
